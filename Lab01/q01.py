@@ -6,6 +6,16 @@ class system:
 
         for i in range(9):
             self.comps[chr(ord('a') + i)] = random.choice([0, 1])
+    
+    def final_check(self):
+        f = 0
+        for key in self.comps:
+            if self.comps[key] == 1:
+                print(f"vulnerabilities still present at {key}")
+                f += 1
+        if f == 0:
+            print("no vulnerabilities found")
+                
 
 class agent:
     def __init__(self):
@@ -19,7 +29,7 @@ class agent:
         
     def patches(self, i_comp):
         for i in range(len(self.vurns)):
-            i_comp[self.vurns[i]] == 1
+            i_comp[self.vurns[i]] = 0
             print(f'vurnebility at {self.vurns[i]} patched')
             patched = i_comp
         return patched
@@ -33,3 +43,4 @@ def run_agent(agent, system):
 mysystem = system()
 myagent = agent()
 run_agent(myagent, mysystem)
+mysystem.final_check()
