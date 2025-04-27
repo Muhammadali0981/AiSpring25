@@ -29,15 +29,11 @@ def hill_climbing(points, max_iterations=1000):
     
     return current_route, current_distance
 
-def main():
-    points = [
-        (0, 0), (1, 2), (3, 1), (4, 3), (2, 4),
-        (5, 2), (6, 4), (7, 1), (8, 3), (9, 0)
-    ]
-    
-    best_route, best_distance = hill_climbing(points)
-    print(f"Best route: {best_route}")
-    print(f"Total distance: {best_distance:.2f}")
+points = [
+    (0, 0), (1, 2), (3, 1), (4, 3), (2, 4),
+    (5, 2), (6, 4), (7, 1), (8, 3), (9, 0)
+]
 
-if __name__ == "__main__":
-    main() 
+best_route, best_distance = hill_climbing(points)
+print(f"Best route: {best_route}")
+print(f"Total distance: {best_distance:.2f}")

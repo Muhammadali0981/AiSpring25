@@ -53,14 +53,11 @@ def beam_search(board, beam_width, depth_limit):
     
     return search_recursive(board, depth_limit, beam_width)
 
-def main():
-    board = chess.Board()
-    beam_width = 3
-    depth_limit = 3
-    
-    sequence, score = beam_search(board, beam_width, depth_limit)
-    print(f"Best move sequence: {[str(move) for move in sequence]}")
-    print(f"Evaluation score: {score}")
+board = chess.Board()
+beam_width = 3
+depth_limit = 3
 
-if __name__ == "__main__":
-    main()
+sequence, score = beam_search(board, beam_width, depth_limit)
+print(f"Best move sequence: {[str(move) for move in sequence]}")
+print(f"Evaluation score: {score}")
+

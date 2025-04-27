@@ -68,15 +68,12 @@ def genetic_algorithm(points, pop_size=100, n_generations=100):
     best_route = max(population, key=lambda x: fitness(x, points))
     return best_route, calculate_total_distance(best_route, points)
 
-def main():
-    points = [
-        (0, 0), (1, 2), (3, 1), (4, 3), (2, 4),
-        (5, 2), (6, 4), (7, 1), (8, 3), (9, 0)
-    ]
-    
-    best_route, best_distance = genetic_algorithm(points)
-    print(f"Best route: {best_route}")
-    print(f"Total distance: {best_distance:.2f}")
+points = [
+    (0, 0), (1, 2), (3, 1), (4, 3), (2, 4),
+    (5, 2), (6, 4), (7, 1), (8, 3), (9, 0)
+]
 
-if __name__ == "__main__":
-    main() 
+best_route, best_distance = genetic_algorithm(points)
+print(f"Best route: {best_route}")
+print(f"Total distance: {best_distance:.2f}")
+
